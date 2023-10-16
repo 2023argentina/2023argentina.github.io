@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personality Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<h1>RESULTADO: ¿Quién te representa?</h1>
+	<center>
+  	<h2>Tu candidato/a es:</h2>
+
+        <div id="content_m" style="display: none;">
+            	<h2>Sergio Tomás Massa</h2>
+           	<img src="candidatos_m.jpg" alt="STM">
+            	<p>Tuvo sus orígenes como intendente de Tigre, con apoyo de Nestor Kirchner, donde logró una buena</p> 
+		<p>gestión, donde destaca la seguridad. Sin embargo luego se distanció creando su propio espacio.</p>
+		<p>Hoy es el candidato de UP y propone recomposición salarial, desarrollo y un gobierno de unidad nacional</p>
+       	</div>
+
+        <div id="content_p" style="display: none;">
+            	<h2>Patricia Bullrich Luro Pueyrredón</h2>
+            	<img src="candidatos_p.jpg" alt="PB">
+            	<p>Si bien no se lleva bien con la economía y tiene en su historial el descuento de 13% a jubilados,</p> 
+		<p>así como haber pasado por muchos partidos diferentes, es elegida por la dureza de su carácter</p>
+		<p>y su determinación, principalmente prometiendo el fin del kirchnerismo.</p>
+        </div>
+     
+	<div id="content_j" style="display: none;">
+            	<h2>Javier Gerardo Milei</h2>
+            	<img src="candidatos_j.jpg" alt="JM">
+            	<p>Puede que sea bastante loco e inestable, y que sus propuestas no tengan evidencia de funcionar,</p> 
+		<p>sin embargo canaliza muy bien el enojo y la frustración de muchos por los últimos años. Su principal</p>
+		<p>enemigo es "La Casta" y busca reducir al mínimo posible la presencia del Estado en favor de los privados.</p>
+        </div>
+
+        <div id="content_mp" style="display: none;">
+            	<h2>EMPATE: Massa - Bullrich</h2>
+            	<img src="candidatos_mp.jpg" alt="PB">
+            	<p>Coincidís en que no hay que destruir al Estado ni quemar el banco central, seguro también</p> 
+		<p>sabés que el cambio climático existe y no está bueno vender órganos...</p>
+		<p>¿Preferís unidad nacional o destruir uno de los sectores? ¿Inversión o ajuste?</p>
+        </div>
+     
+	<div id="content_mj" style="display: none;">
+            	<h2>EMPATE: Massa - Milei</h2>
+            	<img src="candidatos_mj.jpg" alt="JM">
+            	<p>Seguro sabés el desastre que fue traer al FMI por parte de Macri, y que cada vez que Bullrich estuvo</p> 
+		<p>en el gobierno el salario siempre perdió, y mucho. Quizás tampoco te convenza cómo habla...</p>
+		<p>¿Preferís negociación multilateral o romper con los principales mercados por ideología? ¿Reformar o quemar todo?</p>
+        </div>
+     
+	<div id="content_jp" style="display: none;">
+            	<h2>EMPATE: Bullrich - Milei</h2>
+            	<img src="candidatos_pj.jpg" alt="JM">
+            	<p>Probablemente estés desencantado con el gobierno de Fernandez, si bien le tocó difícil, dejó qué desear.</p> 
+		<p>Lo tuyo quizás es la mano dura y un estado que invierte poco o nada, y permite a los privados hacer negocios.</p>
+		<p>¿Preferís ayudar a los grandes exportadores agrícolas o al sector financiero? ¿Ajuste con moneda propia o mediante dolarización?</p>
+        </div>
+
+	<div id="result" class="result"></div>
+	<a href="index.html">Reintentar el cuestionario</a>
+
+	<script>
+		const params = new URLSearchParams(window.location.search);
+		const resultDiv = document.getElementById('result');
+		const received_m = parseInt(params.get("m"));
+		const received_p = parseInt(params.get("p"));
+		const received_j = parseInt(params.get("j"));
+
+
+		if (received_m > received_p && received_m > received_j) {
+		    document.getElementById("content_m").style.display = "block";
+      			console.log("Entró a Massa", received_m );
+		} else if (received_p > received_j && received_p > received_m) {
+		    document.getElementById("content_p").style.display = "block";
+      			console.log("Entró a Pato", received_p );
+		} else if (received_j > received_p && received_j > received_m) {
+		    document.getElementById("content_j").style.display = "block";
+      			console.log("Entró a Milei", received_j );
+		} else if (received_m > received_p && received_m === received_j) {
+		    document.getElementById("content_mj").style.display = "block";
+		} else if (received_m > received_j && received_m === received_p) {
+		    document.getElementById("content_mp").style.display = "block";
+		} else if (received_p > received_m && received_j === received_p) {
+		    document.getElementById("content_jp").style.display = "block";
+		}
+
+
+	let porcent_m = (received_m / 17)*100;
+	let porcent_p = (received_p / 17)*100;
+	let porcent_j = (received_j / 17)*100;
+	resultDiv.textContent = `Resultado: Massa= ${porcent_m.toFixed(2) }%  |  Bullrich= ${porcent_p.toFixed(2) }%   |  Milei= ${porcent_j.toFixed(2) }% `;
+   	</script>
+	</center>
+</body>
+</html>

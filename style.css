@@ -21,6 +21,17 @@ h1 {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+h3 {
+	text-align: center;
+	color: #eeeeee;
+	font-family: Arial, sans-serif;
+	//text-transform: uppercase;
+	background-color: #999999;
+	padding: 8px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 form {
 	max-width: 600px;
 	margin: 0 auto;

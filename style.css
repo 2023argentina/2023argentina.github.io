@@ -3,6 +3,13 @@ body {
 	background-color: #f1f1f1;
 }
 
+img {
+	max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+	height: auto; /* Mantiene la proporción de aspecto original de la imagen */
+	display: block; /* Elimina espacios en blanco alrededor de la imagen */
+	margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
 h1 {
 	text-align: center;
 	color: #ffffff;

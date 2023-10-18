@@ -1,5 +1,3 @@
-# personality-test
-The website is an online personality test that asks questions and displays the user's personality type and description upon completion.
+# Test electoral: ¿Quién te representa?
 
-It has been made with simple Html, Css and JS.
-There are 3 questions and after selecting choices, when clicked Submit. The personality is shown in the result bar.
+Test creado para saber cual de los tres candidatos mayoritarios te representa según sus puntos de vista en algunas de las principales dimensiones, todo basado en declaraciones públicas o experiencias de gobierno, en caso de existir.
